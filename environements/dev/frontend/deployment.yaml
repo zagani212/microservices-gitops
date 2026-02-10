@@ -21,6 +21,6 @@ spec:
         - containerPort: 8081
         env:
         - name: NOTES_ENDPOINT
-          value: "http://notes.default.svc.cluster.local:8080"
+          value: "http://notes.dev.svc.cluster.local:8080"
         - name: USERS_ENDPOINT
-          value: "http://users.default.svc.cluster.local:8082"
+          value: "http://users.dev.svc.cluster.local:8082"
