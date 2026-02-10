@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: notes
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notes
+  template:
+    metadata:
+      labels:
+        app: notes
+    spec:
+      containers:
+      - name: notes
+        image: abdelhak245/kube-notes:v1.1
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: notes
+          mountPath: /data
+  volumeClaimTemplates:
+  - metadata:
+      name: notes
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 500Mi
