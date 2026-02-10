@@ -7,9 +7,9 @@ spec:
   project: default
   source:
     repoURL: https://github.com/zagani212/microservices-gitops.git
-    targetRevision: HEAD
     path: environements/prod
-
+    directory:
+      recurse: true
   destination: 
     name: in-cluster
     namespace: prod
