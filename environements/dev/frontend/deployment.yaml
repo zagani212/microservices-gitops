@@ -5,6 +5,14 @@ metadata:
   labels:
     app: front
 spec:
+  securityContext:
+    runAsNoRoot: true
+    readOnlyRootFileSystem: true
+    allowPriviligeEscalation: false
+    runAsUser: 1000
+    runAsGroup: 3000
+    fsGroup: 2000
+    supplementalGroups: [4000]
   replicas: 2
   selector:
     matchLabels:

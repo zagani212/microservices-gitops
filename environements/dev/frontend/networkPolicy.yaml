@@ -13,7 +13,16 @@ spec:
     - {}
   egress:
   - to:
+    - namespaceSelector: {}
+    ports:
+    - protocol: UDP
+      port: 53
+    - protocole: TCP
+      port: 53
+  - to:
     - podSelector:
         matchLabels:
           app: notes
+    - podSelector:
+        matchLabels:
           app: users

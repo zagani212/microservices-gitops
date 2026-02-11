@@ -8,7 +8,6 @@ spec:
       app: users
   policyTypes:
   - Ingress
-  - Egress
   ingress:
   - from:
     - podSelector:
@@ -17,8 +16,3 @@ spec:
     ports:
     - protocol: TCP
       port: 8082
-  egress:
-  - to:
-    - podSelector:
-        matchLabels:
-          app: front
